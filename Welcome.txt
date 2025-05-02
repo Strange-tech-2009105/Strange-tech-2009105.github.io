@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="滿慶科技股份有限公司">
+    <title>滿慶科技股份有限公司</title>
+    <style>
+        body {
+            background-image: url('Image/strange+海洋.webp');
+            background-size: contain; /* 保持圖片比例，並完整顯示圖片 */
+            background-position: center;
+            background-repeat: no-repeat; /* 不重複背景圖片 */
+            background-color: #333; /* 背景顏色 */
+            margin: 0; /* 外邊距0 */
+            height: 100vh; /* 將元素的高度設置為視口高度的100% */
+            background-size: 100%; /* 圖片保持原比例完整顯示 */
+            display: flex; /* 彈性容器 */
+            flex-direction: column; /* 垂直排列 main 和 footer */
+        }
+        main {
+            flex: 1; /* 使 main 占據剩餘空間 */
+            display: flex; /* 彈性容器 */
+            justify-content: center; /* 水平置中 */
+            align-items: flex-end; /* 垂直對齊到底部 */
+        }
+        footer {
+            height: 100px; /* 設定高度為 100 像素 */
+            background-color: #727272; /* 設定背景顏色 */
+            display: flex; /* 使用彈性布局 */
+            align-items: center; /* 垂直置中 */
+            justify-content: center; /* 水平置中 */
+            width: 100%; /* 設定寬度為 100% */
+        }
+        
+        a {
+            position: absolute; /* 使鏈接覆蓋整個視窗 */
+            top: 0; /* 上邊界:0 */
+            left: 0; /* 左邊界:0 */
+            right: 0; /* 右邊界:0 */
+            bottom: 0; /* 下邊界:0 */
+            text-decoration: none; /* 去掉下劃線 */
+        }
+    
+        h1 {
+            z-index: 1; /* 確保文字在鏈接上方可見 */
+            color: #FFFFFF; /* 文字顏色 */
+        }
+    </style>
+    
+    <body>
+        <main>
+            <h1>點擊任意地方進入主頁</h1>
+            <a href="Index.html"></a> <!-- 這裡設定下一頁的網址 -->
+        </main>
+        
+        <footer>
+            <h1 style="text-align: center;">
+                Welcome to Strange<br>
+                歡迎光臨滿慶科技股份有限公司
+            </h1>
+        </footer>
+    </body>
+    
+
+
+</html>
