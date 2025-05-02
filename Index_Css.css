@@ -1,0 +1,173 @@
+body {
+    background-size: cover; /* 背景圖片大小設為 cover，覆蓋整個畫面 */
+    background-position: center; /* 背景圖片居中顯示 */
+    background-repeat: no-repeat; /* 背景圖片不重複 */
+    background-color: #ffffff; /* 背景色設為深灰色 */
+    margin: 0; /* 移除預設邊距 */
+    height: 100vh; /* 設定頁面高度等於視窗高度 */
+    display: flex; /* 使用 flex 排版 */
+    flex-direction: column; /* 垂直排列子元素 */
+    transform-origin: top left; /* 縮放起點為左上角 */
+    transform: scale(1); /* 初始縮放為 1 倍 */
+    transition: transform 0.3s ease, background-size 0.3s ease; /* 縮放與背景大小改變時套用動畫過渡 */
+}
+
+/* 螢幕寬度小於 1200px 時的樣式 */
+@media (max-width: 1200px) {
+    body {
+        transform: scale(1); /* 縮放比例維持 1（原本是想調整為 0.9 可修改） */
+        background-size: 110%; /* 背景圖片稍微放大 */
+        font-size: 90%; /* 字體縮小為原來的 90% */
+    }
+}
+
+/* 螢幕寬度小於 900px 時的樣式 */
+@media (max-width: 900px) {
+    body {
+        transform: scale(1); /* 縮放比例維持 1（可改為 0.8） */
+        background-size: 120%; /* 背景圖片進一步放大 */
+        font-size: 60%; /* 字體縮小為原來的 90% */
+    }
+}
+
+/* 螢幕寬度小於 600px 時的樣式 */
+@media (max-width: 600px) {
+    body {
+        transform: scale(1); /* 縮放比例維持 1（可改為 0.7） */
+        background-size: 100%; /* 背景圖片調整為 100% */
+        font-size: 35%; /* 字體縮小為原來的 90% */
+    }
+}
+
+body::before {
+    content: ''; /* 建立偽元素作為背景層 */
+    position: absolute; /* 絕對定位，讓其填滿整個畫面 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Image/Welcmon_Background.webp'); /* 背景圖片路徑 */
+    background-size: 50%; /* 圖片保持原比例完整顯示 */
+    background-position: center; /* 圖片居中 */
+    background-repeat: no-repeat; /* 不重複 */
+    opacity: 0.3; /* 半透明顯示 */
+    z-index: -1; /* 放在所有內容下方 */
+}
+
+#TOP {
+    display: flex; /* 使用 Flex 排列主選單 */
+    justify-content: right; /* 對齊到右側 */
+    align-items: center; /* 垂直居中 */
+    padding: 0px; /* 內邊距 10px */
+    font-size: 10px; /* 設定字體大小 */
+    background-color: #727272; /* 背景色設為深灰色 */
+}
+
+
+.fixed-header {
+    position: fixed; /* 固定在畫面頂部 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 寬度撐滿畫面 */
+    z-index: 1000; /* 層級高於其他元素 */
+}
+
+.menu-item {
+    list-style-type: none; /* 移除項目前的圓點符號 */
+    margin: 0 10px; /* 左右外距 10px */
+    position: relative; /* 為下拉選單定位使用的參考點 */
+}
+
+.menu-item h1 {
+    margin: 0; /* 移除 h1 外距 */
+    font-size: 20px; /* 設定字體大小 */
+}
+
+.menu-item a {
+    text-decoration: none; /* 移除底線 */
+    color: #a6ff00; /* 字體顏色為螢光綠 */
+    font-weight: bold; /* 加粗字體 */
+}
+
+/* 子選單 ul 預設隱藏 */
+.menu-item ul {
+    display: none; /* 預設不顯示子選單 */
+    position: absolute; /* 絕對定位在父選單項目下方 */
+    top: 100%; /* 與主選單項目底部對齊 */
+    left: 0; /* 對齊左邊 */
+    background-color: #333; /* 背景白色 */
+    padding: 10px 10px; /* 上下內邊距 */
+    margin: 0; /* 移除外距 */
+    list-style: none; /* 移除子項目前的圓點 */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* 添加陰影效果 */
+    z-index: 999; /* 層級高於一般內容 */
+}
+
+/* 滑鼠懸停在 menu-item 時顯示子選單 zz*/
+.menu-item:hover ul {
+    display: block; /* 顯示下拉選單 */
+}
+
+/* 子選單 li 樣式 zz*/
+.menu-item ul li {
+    padding: 10px 10px; /* 內距 */
+    white-space: nowrap; /* 不換行 */
+    
+}
+
+/* 子選單中的連結樣式 zz*/
+.menu-item ul li a {
+    color: #a6ff00; /* 深灰色字體 */
+    font-size: 18px; /* 設定字體大小 */
+    text-decoration: none; /* 無底線 */
+}
+
+/* 滑鼠懸停子選單時的樣式 */
+.menu-item ul li a:hover {
+    color: #a6ff00; /* 懸停時顯示螢光綠 */
+    text-decoration: underline; /* 加底線 */
+}
+
+.item {
+    flex: 1; /* 自動撐滿可用空間 */
+    display: flex; /* 使用 Flexbox 排版 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    border: 0px solid #ccc; /* 無邊框 */
+    padding-top: 0%; /* 上方留白 */
+}
+
+
+a {
+    text-decoration: none; /* 連結無底線 zz*/
+    color: #a6ff00; /* 螢光綠色 */
+}
+
+a:hover {
+    text-decoration: underline; /* 懸停時顯示底線 */
+}
+
+.responsive-image {
+    max-width: 100%; /* 圖片寬度不超過父容器 */
+    height: auto; /* 高度自動調整，保持比例 */
+    display: block; /* 作為區塊元素 */
+    margin: 0 auto; /* 水平置中 */
+    transition: all 0.3s ease; /* 所有屬性變化都有動畫過渡 */
+}
+
+
+footer {
+    position: fixed; /* 固定在頁面底部 */
+    bottom: 0;
+    width: 100%;
+    height: 80px; /* 高度為 80px */
+    background-color: #727272; /* 灰色背景 */
+    color: #fff; /* 白色字體 */
+    text-align: center; /* 文字置中 */
+    display: flex; /* 使用 Flexbox 排版 */
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center; /* 垂直居中對齊 */
+    align-items: center; /* 水平居中對齊 */
+    padding: 0.3% 0; /* 上下內距 */
+}
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @media (max-width: 600px) {
+            p {
+                font-size: 5vw; /* Larger font size for smaller screens */
+            }
+        }
+        /* 定義向右插入的動畫 */
+        @keyframes slideInRight {
+            from {
+                transform: translateX(-100%); /* 從畫面左邊外部進入 */
+                opacity: 0; /* 初始為透明 */
+            }
+            to {
+                transform: translateX(0); /* 最終停在正常位置 */
+                opacity: 1; /* 最終完全顯示 */
+            }
+        }
+
+        /* 給圖片添加動畫效果 */
+        .animated-image {
+            opacity: 0; /* 初始透明 */
+            transition: opacity 1s ease-out; /* 讓動畫平滑過渡 */
+        }
+
+        .animated-image.visible {
+            animation: slideInRight 1s ease-out forwards; /* 當元素可見時啟動動畫 */
+        }
+        .container {
+            display: flex; /* 使用 Flexbox */
+            height: 100%; /* 使容器充滿整個螢幕 */
+        }
+        .right {
+            flex: 1; /* 使左右兩邊寬度相等 */
+            padding-left: 4%;
+            padding-top: 3%; /* 在上邊添加間距 */
+        }
+        .left {
+            flex: 0.3; /* 使左右兩邊寬度相等 */
+            padding: 1%; /* 設定內邊距 */
+        }
+
+        .IDaddress {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .full-IDaddress {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #ccc;
+            width: 300px;
+            z-index: 10;
+            top: 100%; /* 顯示在短地址下方 */
+            left: 0;
+            white-space: normal;
+        }
+
+        .IDaddress:hover .full-IDaddress {
+            display: block;
+        }
+
+        
+    </style>
+</head>
+
+<body style="margin: 0 auto; padding-bottom: 100px;">  
+    <div class="container">
+        <div class="left" style="width: 15vw;"><!-- 左邊畫面編輯 -->
+            <img src="Image/圖片30.png" alt="示範圖片" style="max-width: 100%; height: auto;" class="animated-image" />
+        </div>
+
+
+        <div class="right" style="width: 85vw;"><!-- 右邊畫面編輯 -->
+            <div style="text-align: left;">
+                <!----------------- 經營理念 ------------------>
+                <table border="0"  style="font-weight: bold; color: #000000">
+                    <tr>
+                        <th><img src="Image/生產基地.png" alt="生產基地" style="max-width: 100%; height: auto;" class="animated-image"/></th>
+                        <th><img src="Image/註冊資金_員工.png" alt="註冊資金_員工" style="max-width: 100%; height: auto;" class="animated-image"/></th>
+                        <th><img src="Image/經營理念.png" alt="經營理念" style="max-width: 100%; height: auto;" class="animated-image"/></th>
+                    </tr>
+
+                    </tr>
+                        <th style="vertical-align: middle; text-align: center;">
+                            <p style="text-align: center;color: #1a1a80; font-size: 30px; font-family: 'DFKai-SB', '微軟正黑體', serif;">生產基地</p>
+                        </th>
+
+                        <th style="vertical-align: middle; text-align: center;">
+                            <p style="text-align: center;color: #1a1a80; font-size: 30px; font-family: 'DFKai-SB', '微軟正黑體', serif;">註冊資金_員工</p>
+                        </th>
+
+                        <th style="vertical-align: middle; text-align: center;">
+                            <p style="text-align: center;color: #1a1a80; font-size: 30px; font-family: 'DFKai-SB', '微軟正黑體', serif;">經營理念&方針</p>
+                        </th>
+                    <tr>
+
+                    <tr>
+                        <th width="300" style="vertical-align: top;">
+                            <p>
+                                總部<br>
+                                高雄市前鎮區新衙路286之2號1樓<br>
+                                成立日期 :  1998年<br>
+                                　　<br>
+                                　　<br>
+                                印尼廠
+                                <br>
+                                <a class="IDaddress">
+                                    <span class="short-IDaddress">J.L INTI II BLOK C7 NO.6</span>
+                                    <span class="full-IDaddress">J.L INTI II BLOK C7 NO.6,KAWASAN INDUSTRI BEKASI INTERNATIONAL INDUSTRIAL ESTATE, HYUNDAI, DESA CIBATU, CIKARANG SELATAN, BEKASI, 17530, JAWA BARAT</span>
+                                </a>
+                                　　<br>
+                                成立日期 :  2017<br>
+                                總面積 : 8,000 m²<br>
+                                　　<br>
+                                　　<br>
+                                越南-第一工廠<br>
+                                北寧省桂武市武三工業區<br>
+                                成立日期 :  2021年<br>
+                                總面積 : 3,008 m²<br>
+                                　　<br>
+                                　　<br>
+                                越南-第二工廠<br>
+                                河南省府裏市清廉工業區<br>
+                                成立日期 :  2023年<br>
+                                總面積 : 18,125 m²<br>
+                                　　<br>
+                                　　<br>
+                                
+                            </p>
+                        </th>
+
+                        <th width="300" style="vertical-align: top;">
+                            <p>
+                                總部<br>
+                                註冊資金 :  TWD:3億<br>
+                                員工 : 20人<br>
+                                　　<br>
+                                　　<br>
+                                印尼廠<br>
+                                註冊資金 :  USD:250萬<br>
+                                員工 : 180人<br>
+                                　　<br>
+                                　　<br>
+                                　　<br>
+                                越南-第一工廠<br>
+                                註冊資金 :  USD:200萬<br>
+                                員工 : 55人<br>
+                                　　<br>
+                                　　<br>
+                                　　<br>
+                                越南-第二工廠<br>
+                                註冊資金 :  USD:800萬<br>
+                                員工 : 50人<br>
+                                　　<br>
+                                
+                                
+                            </p>
+                        </th>
+                        
+                        <th width="300" style="vertical-align: top;">
+                            <p>
+                                透過自主營銷及研發能力，<br>
+                                並整合豐富產業資源，<br>
+                                快速準確地滿足客戶需求<br>
+                                通過最佳的<br>
+                                Q（品質）<br>
+                                C（成本）<br>
+                                D（交期）<br>
+                                S（服務）<br>
+                                為客戶創造價值<br>
+                                講究實效、完善管理、<br>
+                                提升服務、增創效益。
+                            </p>
+                        </th>
+                    </tr>
+                </table>
+                <!----------------- 經營理念[END] ------------------>
+
+                <!----------------- 競爭力 ------------------>
+                <table border="0"  style="font-weight: bold; color: white;">
+                    <tr>
+                        <th width="800" style="vertical-align: top;">
+                            <p>
+                                <h1 style="text-align: center; color: #1a1a80; font-family: 'DFKai-SB', '微軟正黑體', serif;">我們的競爭力</h1>                                  
+                            </p>
+                            <br>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <img src="Image/競爭力3.png" alt="競爭力" style="max-width: 100%; height: auto;" class="animated-image"/>
+                        </th>
+                    </tr>   
+                </table>
+                <!----------------- 競爭力[END] ------------------>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 設置 IntersectionObserver 監控圖片進入視口
+        const images = document.querySelectorAll('.animated-image');
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // 當圖片進入視口時，添加 'visible' 類別，觸發動畫
+                    observer.unobserve(entry.target); // 停止監控這個元素，避免重複觸發
+                }
+            });
+        }, {
+            threshold: 0.5 // 設定圖片進入視口一半時觸發動畫
+        });
+    
+        images.forEach(image => {
+            observer.observe(image); // 開始監控每一張圖片
+        });
+    </script>
+    
+</body>
+
+</html>
+
+
+
